@@ -121,22 +121,6 @@ services:
       rgmain:
         ipv4_address: 172.16.193.57
 
-  caddy:
-    image: caddy:2.0.0-alpine
-    restart: always
-    env_file:
-        - .env
-    ports:
-      - 80:80
-      - 443:443
-    networks:
-        rgmain:
-          ipv4_address: 172.16.193.60
-    volumes:
-      - ./docker-data/caddy/data/:/data
-      - ./docker-data/caddy/config/:/config
-      - ./docker-data/caddy/Caddyfile:/etc/caddy/Caddyfile
-
 networks:
   rgmain:
     ipam:
